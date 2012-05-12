@@ -1,0 +1,24 @@
+.perlcriticrc
+Build.PL
+Changes
+ignore.txt
+lib/DBIx/ScopedTransaction.pm
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+META.json
+META.yml
+README
+t/00-load.t
+t/10-new.t
+t/11-new-simultaneous_transactions.t
+t/15-get_database_handle.t
+t/20-commit.t
+t/30-rollback.t
+t/40-DESTROY.t
+t/50-is_active.t
+t/manifest.t
+t/module_versions.t
+t/perlcritic.t
+t/pod.t
+t/pod-coverage.t

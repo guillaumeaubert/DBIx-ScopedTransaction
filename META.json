@@ -1,0 +1,61 @@
+{
+   "abstract" : "Scope database transactions on DBI handles in code, to detect and prevent issues with unterminated transactions.",
+   "author" : [
+      "Guillaume Aubert <aubertg@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4, CPAN::Meta::Converter version 2.120530",
+   "license" : [
+      "artistic_1"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "DBIx-ScopedTransaction",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Carp" : "0",
+            "DBD::SQLite" : "0",
+            "DBI" : "0",
+            "Data::Dumper" : "0",
+            "Data::Validate::Type" : "0",
+            "File::Spec" : "0",
+            "Test::Exception" : "0",
+            "Test::More" : "0",
+            "Try::Tiny" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "perl" : "5.006"
+         }
+      }
+   },
+   "provides" : {
+      "DBIx::ScopedTransaction" : {
+         "file" : "lib/DBIx/ScopedTransaction.pm",
+         "version" : "v1.0.0"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "http://rt.cpan.org/NoAuth/ReportBug.html?Queue=dbix-scopedtransaction"
+      },
+      "homepage" : "https://metacpan.org/release/DBIx-ScopedTransaction",
+      "license" : [
+         "http://opensource.org/licenses/artistic-license.php"
+      ],
+      "repository" : {
+         "url" : "https://sourceforge.net/p/perltransaction/code"
+      }
+   },
+   "version" : "v1.0.0"
+}
