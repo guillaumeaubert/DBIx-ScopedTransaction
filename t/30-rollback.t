@@ -100,6 +100,9 @@ is(
 	'Found 0 rows in the table, rollback successful.',
 );
 
+# Destroy $dbh so that the underlying file stops being in use. Otherwise, we
+# won't be able to unlink() on Windows.
+undef $dbh;
 ok(
 	unlink( $database_file ),
 	'Remove test database.'

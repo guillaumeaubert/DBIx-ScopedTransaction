@@ -100,6 +100,9 @@ is(
 	'Found 1 rows in the table, commit successful.',
 );
 
+# Destroy $dbh so that the underlying file stops being in use. Otherwise, we
+# won't be able to unlink() on Windows.
+undef $dbh;
 ok(
 	unlink( $database_file ),
 	'Remove test database.'
