@@ -41,7 +41,7 @@
    "provides" : {
       "DBIx::ScopedTransaction" : {
          "file" : "lib/DBIx/ScopedTransaction.pm",
-         "version" : "v1.0.0"
+         "version" : "v1.0.1"
       }
    },
    "release_status" : "stable",
@@ -57,5 +57,5 @@
          "url" : "https://sourceforge.net/p/perltransaction/code"
       }
    },
-   "version" : "v1.0.0"
+   "version" : "v1.0.1"
 }
