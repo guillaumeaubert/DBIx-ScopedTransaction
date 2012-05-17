@@ -1,5 +1,8 @@
 Revision history for DBIx-ScopedTransaction
 
+v1.0.2  05/17/2012
+        Changed to use in-memory SQLite databases for testing.
+
 v1.0.1  05/15/2012
         Made tests pass on Windows.
 
