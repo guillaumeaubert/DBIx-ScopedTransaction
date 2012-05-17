@@ -6,27 +6,12 @@ use warnings;
 use DBI;
 use DBIx::ScopedTransaction;
 use Test::Exception;
-use Test::More tests => 13;
+use Test::More tests => 11;
 
-
-my $database_file = 'test_database_destroy';
-
-SKIP:
-{
-	skip(
-		'Database ready to be set up.',
-		1,
-	) if !-e $database_file;
-	
-	ok(
-		unlink( $database_file ),
-		'Remove old test database.'
-	);
-}
 
 ok(
 	my $dbh = DBI->connect(
-		"dbi:SQLite:dbname=$database_file",
+		"dbi:SQLite::memory:",
 		'',
 		'',
 		{
@@ -94,7 +79,7 @@ isnt(
 ) || diag( explain( $destroy_logs ) );
 
 is(
-	scalar ( grep { $_ eq 'Transaction object created at t/40-DESTROY.t:69 is going out of scope, but the transaction has not been committed or rolled back; check logic.' } @$destroy_logs ),
+	scalar ( grep { $_ eq 'Transaction object created at t/40-DESTROY.t:54 is going out of scope, but the transaction has not been committed or rolled back; check logic.' } @$destroy_logs ),
 	1,
 	'Found warning explaining where the transaction was started and that is was not completed properly.',
 ) || diag( explain( $destroy_logs ) );
@@ -132,12 +117,4 @@ is(
 	$rows_found,
 	0,
 	'Found 0 rows in the table, auto-rollback successful.',
-);
-
-# Destroy $dbh so that the underlying file stops being in use. Otherwise, we
-# won't be able to unlink() on Windows.
-undef $dbh;
-ok(
-	unlink( $database_file ),
-	'Remove test database.'
 );

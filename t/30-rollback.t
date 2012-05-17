@@ -7,27 +7,12 @@ use DBI;
 use DBIx::ScopedTransaction;
 use File::Spec;
 use Test::Exception;
-use Test::More tests => 8;
+use Test::More tests => 6;
 
-
-my $database_file = 'test_database_rollback';
-
-SKIP:
-{
-	skip(
-		'Database ready to be set up.',
-		1,
-	) if !-e $database_file;
-	
-	ok(
-		unlink( $database_file ),
-		'Remove old test database.'
-	);
-}
 
 ok(
 	my $dbh = DBI->connect(
-		"dbi:SQLite:dbname=$database_file",
+		"dbi:SQLite::memory:",
 		'',
 		'',
 		{
@@ -98,12 +83,4 @@ is(
 	$rows_found,
 	0,
 	'Found 0 rows in the table, rollback successful.',
-);
-
-# Destroy $dbh so that the underlying file stops being in use. Otherwise, we
-# won't be able to unlink() on Windows.
-undef $dbh;
-ok(
-	unlink( $database_file ),
-	'Remove test database.'
 );
