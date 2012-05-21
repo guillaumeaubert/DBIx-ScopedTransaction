@@ -35,7 +35,7 @@ our $DESTROY_LOGGER;
 	{
 		my ( $messages ) = @_;
 		
-		foreach $message ( @$messages )
+		foreach my $message ( @$messages )
 		{
 			warn "DBIx::ScopedTransaction: $message";
 		}
