@@ -185,13 +185,17 @@ sub commit
 		return 0;
 	}
 	
-	if ( $self->get_database_handle()->commit() )
+	my $database_handle = $self->get_database_handle();
+	if ( $database_handle->commit() )
 	{
 		$self->is_active( 0 );
 		return 1;
 	}
-	
-	return 0;
+	else
+	{
+		Carp::cluck( 'Failed to commit transaction: ' . $database_handle->errstr() );
+		return 0;
+	}
 }
 
 
@@ -213,13 +217,17 @@ sub rollback
 		return 0;
 	}
 	
-	if ( $self->get_database_handle()->rollback() )
+	my $database_handle = $self->get_database_handle();
+	if ( $database_handle->rollback() )
 	{
 		$self->is_active( 0 );
 		return 1;
 	}
-	
-	return 0;
+	else
+	{
+		Carp::cluck( 'Failed to rollback transaction: ' . $database_handle->errstr() );
+		return 0;
+	}
 }
 
 
