@@ -31,7 +31,7 @@ our $DESTROY_LOGGER;
 	
 	# Optional, define custom logger for errors detected when destroying a
 	# transaction object. By default, this prints to STDERR.
-	local $DBIx::ScopedTransaction::DESTROY_LOGGER = sub
+	$DBIx::ScopedTransaction::DESTROY_LOGGER = sub
 	{
 		my ( $messages ) = @_;
 		
@@ -238,10 +238,10 @@ object is destroyed.
 
 	_default_destroy_logger( $messages );
 
-To override this default logger you can localize
+To override this default logger you can override
 C<$DBIx::ScopedTransaction::DESTROY_LOGGER>. For example:
 
-	local $DBIx::ScopedTransaction::DESTROY_LOGGER = sub
+	$DBIx::ScopedTransaction::DESTROY_LOGGER = sub
 	{
 		my ( $messages ) = @_;
 		
