@@ -1,5 +1,9 @@
 Revision history for DBIx-ScopedTransaction
 
+v1.0.3  05/23/2012
+        Tweaked documentation.
+        Added error details when commit/rollback fails.
+
 v1.0.2  05/17/2012
         Changed to use in-memory SQLite databases for testing.
 
