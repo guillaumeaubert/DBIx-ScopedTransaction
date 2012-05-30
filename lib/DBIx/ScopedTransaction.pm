@@ -193,7 +193,10 @@ sub commit
 	}
 	else
 	{
-		Carp::cluck( 'Failed to commit transaction: ' . $database_handle->errstr() );
+		Carp::cluck(
+			'Failed to commit transaction: ' .
+			( $database_handle->errstr() // '(no error associate with the database handle)' )
+		);
 		return 0;
 	}
 }
@@ -225,7 +228,10 @@ sub rollback
 	}
 	else
 	{
-		Carp::cluck( 'Failed to rollback transaction: ' . $database_handle->errstr() );
+		Carp::cluck(
+			'Failed to rollback transaction: ' .
+			( $database_handle->errstr() // '(no error associate with the database handle)'
+		);
 		return 0;
 	}
 }
