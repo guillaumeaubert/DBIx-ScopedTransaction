@@ -12,6 +12,7 @@ README
 t/00-load.t
 t/10-new.t
 t/11-new-simultaneous_transactions.t
+t/12-new-void_context.t
 t/15-get_database_handle.t
 t/20-commit.t
 t/30-rollback.t
