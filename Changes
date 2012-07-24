@@ -1,5 +1,9 @@
 Revision history for DBIx-ScopedTransaction
 
+v1.0.4  07/24/2012
+        Prevented instantiating new objects in void context.
+        Fixed warnings.
+
 v1.0.3  05/23/2012
         Tweaked documentation.
         Added error details when commit/rollback fails.
