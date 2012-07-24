@@ -230,7 +230,7 @@ sub rollback
 	{
 		Carp::cluck(
 			'Failed to rollback transaction: ' .
-			( $database_handle->errstr() // '(no error associate with the database handle)'
+			( $database_handle->errstr() // '(no error associate with the database handle)' )
 		);
 		return 0;
 	}
