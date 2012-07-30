@@ -1,5 +1,8 @@
 Revision history for DBIx-ScopedTransaction
 
+v1.0.6  07/30/2012
+        * Refactored use of '//', for portability.
+
 v1.0.5  07/24/2012
         * Cleanup.
 
