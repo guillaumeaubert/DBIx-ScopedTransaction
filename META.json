@@ -16,15 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Carp" : "0",
             "DBD::SQLite" : "0",
             "DBI" : "0",
             "Data::Dumper" : "0",
-            "Data::Validate::Type" : "0",
             "File::Spec" : "0",
             "Test::Exception" : "0",
-            "Test::More" : "0",
-            "Try::Tiny" : "0"
+            "Test::More" : "0"
          }
       },
       "configure" : {
@@ -34,6 +31,9 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
+            "Data::Validate::Type" : "0",
+            "Try::Tiny" : "0",
             "perl" : "5.006"
          }
       }
