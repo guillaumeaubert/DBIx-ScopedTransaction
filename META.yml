@@ -21,7 +21,7 @@ name: DBIx-ScopedTransaction
 provides:
   DBIx::ScopedTransaction:
     file: lib/DBIx/ScopedTransaction.pm
-    version: v1.0.6
+    version: v1.0.7
 requires:
   Carp: 0
   Data::Validate::Type: 0
@@ -32,4 +32,4 @@ resources:
   homepage: https://metacpan.org/release/DBIx-ScopedTransaction
   license: http://www.perlfoundation.org/artistic_license_1_0
   repository: https://github.com/guillaumeaubert/DBIx-ScopedTransaction
-version: v1.0.6
+version: v1.0.7

@@ -15,11 +15,11 @@ DBIx::ScopedTransaction - Scope database transactions on DBI handles in code, to
 
 =head1 VERSION
 
-Version 1.0.6
+Version 1.0.7
 
 =cut
 
-our $VERSION = '1.0.6';
+our $VERSION = '1.0.7';
 
 our $DESTROY_LOGGER;
 
