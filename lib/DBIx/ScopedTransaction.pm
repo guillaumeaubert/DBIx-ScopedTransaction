@@ -81,7 +81,7 @@ programmer handled terminating the transaction.
 		catch
 		{
 			$transaction->rollback();
-		}
+		};
 	}
 	
 	test();
@@ -93,11 +93,11 @@ and forces a rollback for safety as well as prints details on what code should
 be reviewed on STDERR.
 
 
-=head1 FUNCTIONS
+=head1 METHODS
 
 =head2 new()
 
-Creates a new transaction.
+Create a new transaction.
 
 	my $transaction = DBIx::ScopedTransaction->new(
 		$database_handle,
@@ -141,9 +141,9 @@ sub new
 
 =head2 get_database_handle()
 
-Returns the database handle the current transaction is operating on.
+Return the database handle the current transaction is operating on.
 
-	my $database_handle = get_database_handle();
+	my $database_handle = $transaction->get_database_handle();
 
 =cut
 
@@ -157,10 +157,15 @@ sub get_database_handle
 
 =head2 is_active()
 
-Returns whether the current transaction object is active.
+Return whether the current transaction object is active.
 
-	my $boolean = $self->is_active();
-	my $boolean = $self->is_active( $boolean );
+	# Get the active status of the transaction.
+	my $is_active = $transaction->is_active();
+
+	# Set the active status of the transaction.
+	$transaction->is_active( $is_active );
+
+The transaction object goes inactive after a successful commit or rollback.
 
 =cut
 
@@ -179,9 +184,9 @@ sub is_active
 
 =head2 commit()
 
-Commits the current transaction.
+Commit the current transaction.
 
-	my $boolean = $self->commit();
+	my $commit_successful = $transaction->commit();
 
 =cut
 
@@ -214,9 +219,9 @@ sub commit
 
 =head2 rollback()
 
-Rolls back the current transaction.
+Roll back the current transaction.
 
-	my $boolean = $self->rollback();
+	my $rollback_successful = $transaction->rollback();
 
 =cut
 
@@ -246,6 +251,8 @@ sub rollback
 	}
 }
 
+
+=head1 HIDDEN FUNCTIONS
 
 =head2 _default_destroy_logger()
 
