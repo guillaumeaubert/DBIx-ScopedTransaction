@@ -38,7 +38,7 @@ throws_ok(
 	{
 		my $transaction2 = DBIx::ScopedTransaction->new( $dbh );
 	},
-	qr/DBD::SQLite::db begin_work failed: Already in a transaction/,
+	qr/DBD::([^:]+)::db begin_work failed: Already in a transaction/,
 	'Fail to start two simultaneous transactions on the same database handle.',
 );
 
