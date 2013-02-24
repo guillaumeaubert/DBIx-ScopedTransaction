@@ -42,6 +42,13 @@ my $builder = Module::Build->new(
 			homepage    => 'https://metacpan.org/release/DBIx-ScopedTransaction',
 			bugtracker  => 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=dbix-scopedtransaction',
 		},
+		no_index               =>
+		{
+			file        =>
+			[
+				't/lib/LocalTest.pm',
+			],
+		},
 	},
 );
 
