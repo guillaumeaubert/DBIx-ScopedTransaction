@@ -20,6 +20,7 @@ t/20-commit.t
 t/30-rollback.t
 t/40-DESTROY.t
 t/50-is_active.t
+t/lib/LocalTest.pm
 t/manifest.t
 t/module_versions.t
 t/perlcritic.t
