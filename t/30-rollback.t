@@ -37,10 +37,14 @@ lives_ok
 	sub
 	{
 		$dbh->do(
-			q|
-				INSERT INTO test_rollback('name')
-				VALUES('test1');
-			|
+			sprintf(
+				q|
+					INSERT INTO test_rollback( %s )
+					VALUES( %s );
+				|,
+				$dbh->quote_identifier( 'name' ),
+				$dbh->quote( 'test1' ),
+			)
 		);
 	},
 	'Insert row.'

@@ -37,10 +37,14 @@ lives_ok
 	sub
 	{
 		$dbh->do(
-			q|
-				INSERT INTO test_commit('name')
-				VALUES('test1');
-			|
+			sprintf(
+				q|
+					INSERT INTO test_commit( %s )
+					VALUES( %s );
+				|,
+				$dbh->quote_identifier( 'name' ),
+				$dbh->quote( 'test1' ),
+			)
 		);
 	},
 	'Insert row.'

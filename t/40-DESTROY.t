@@ -54,10 +54,14 @@ ok(
 		sub
 		{
 			$dbh->do(
-				q|
-					INSERT INTO test_out_of_scope('name')
-					VALUES('test1');
-				|
+				sprintf(
+					q|
+						INSERT INTO test_out_of_scope( %s )
+						VALUES( %s );
+					|,
+					$dbh->quote_identifier( 'name' ),
+					$dbh->quote( 'test1' ),
+				)
 			);
 		},
 		'Insert row.'
