@@ -1,5 +1,9 @@
 Revision history for DBIx-ScopedTransaction
 
+v1.1.1  02/24/2013
+        * Generalized tests to support any database type.
+        * Set up integration with Travis-CI for continuous integration.
+
 v1.1.0  10/03/2012
         * Relicensed as GPLv3.
         * Cleaned up documentation.

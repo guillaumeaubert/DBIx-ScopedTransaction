@@ -13,6 +13,11 @@
       "version" : "2"
    },
    "name" : "DBIx-ScopedTransaction",
+   "no_index" : {
+      "file" : [
+         "t/lib/LocalTest.pm"
+      ]
+   },
    "prereqs" : {
       "build" : {
          "requires" : {
@@ -41,7 +46,7 @@
    "provides" : {
       "DBIx::ScopedTransaction" : {
          "file" : "lib/DBIx/ScopedTransaction.pm",
-         "version" : "v1.1.0"
+         "version" : "v1.1.1"
       }
    },
    "release_status" : "stable",
@@ -57,5 +62,5 @@
          "url" : "https://github.com/guillaumeaubert/DBIx-ScopedTransaction"
       }
    },
-   "version" : "v1.1.0"
+   "version" : "v1.1.1"
 }

@@ -20,7 +20,7 @@ WriteMakefile
   'EXE_FILES' => [],
   'PL_FILES' => {},
   'test' => {
-              'TESTS' => 't/*.t'
+              'TESTS' => 't/*.t t/lib/*.t'
             }
 )
 ;

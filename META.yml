@@ -18,10 +18,13 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: DBIx-ScopedTransaction
+no_index:
+  file:
+    - t/lib/LocalTest.pm
 provides:
   DBIx::ScopedTransaction:
     file: lib/DBIx/ScopedTransaction.pm
-    version: v1.1.0
+    version: v1.1.1
 requires:
   Carp: 0
   Data::Validate::Type: 0
@@ -32,4 +35,4 @@ resources:
   homepage: https://metacpan.org/release/DBIx-ScopedTransaction
   license: http://www.gnu.org/licenses/gpl-3.0.txt
   repository: https://github.com/guillaumeaubert/DBIx-ScopedTransaction
-version: v1.1.0
+version: v1.1.1
