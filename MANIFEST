@@ -8,7 +8,7 @@ MANIFEST.SKIP
 META.json
 META.yml
 Makefile.PL
-README
+README.md
 ignore.txt
 lib/DBIx/ScopedTransaction.pm
 t/00-load.t
