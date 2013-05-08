@@ -1,10 +1,15 @@
 DBIx-ScopedTransaction
+======================
+
+[![Build Status](https://travis-ci.org/guillaumeaubert/DBIx-ScopedTransaction.png?branch=master)](https://travis-ci.org/guillaumeaubert/DBIx-ScopedTransaction)
 
 DBIx::ScopedTransaction is a module that allows scoping database transactions
 on DBI handles in code, to detect and prevent issues with unterminated
 transactions.
 
+
 INSTALLATION
+------------
 
 To install this module, run the following commands:
 
@@ -13,29 +18,33 @@ To install this module, run the following commands:
 	./Build test
 	./Build install
 
+
 SUPPORT AND DOCUMENTATION
+-------------------------
 
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc DBIx::ScopedTransaction
+	perldoc DBIx::ScopedTransaction
+
 
 You can also look for information at:
 
-    RT, CPAN's request tracker (report bugs here)
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=DBIx-ScopedTransaction
+ * [RT, CPAN's request tracker (report bugs here)]
+   (http://rt.cpan.org/NoAuth/Bugs.html?Dist=DBIx-ScopedTransaction)
 
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/DBIx-ScopedTransaction
+ * [AnnoCPAN, Annotated CPAN documentation]
+   (http://annocpan.org/dist/DBIx-ScopedTransaction)
 
-    CPAN Ratings
-        http://cpanratings.perl.org/d/DBIx-ScopedTransaction
+ * [CPAN Ratings]
+   (http://cpanratings.perl.org/d/DBIx-ScopedTransaction)
 
-    Search CPAN
-        http://search.cpan.org/dist/DBIx-ScopedTransaction/
+ * [Search CPAN]
+   (http://search.cpan.org/dist/DBIx-ScopedTransaction/)
 
 
 LICENSE AND COPYRIGHT
+---------------------
 
 Copyright (C) 2012 Guillaume Aubert
 
