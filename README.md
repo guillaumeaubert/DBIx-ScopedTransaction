@@ -30,8 +30,8 @@ perldoc command.
 
 You can also look for information at:
 
- * [RT, CPAN's request tracker (report bugs here)]
-   (http://rt.cpan.org/NoAuth/Bugs.html?Dist=DBIx-ScopedTransaction)
+ * [GitHub's request tracker (report bugs here)]
+   (https://github.com/guillaumeaubert/DBIx-ScopedTransaction/issues)
 
  * [AnnoCPAN, Annotated CPAN documentation]
    (http://annocpan.org/dist/DBIx-ScopedTransaction)

@@ -72,7 +72,7 @@ my $builder = $class->new(
 		{
 			repository  => 'https://github.com/guillaumeaubert/DBIx-ScopedTransaction',
 			homepage    => 'https://metacpan.org/release/DBIx-ScopedTransaction',
-			bugtracker  => 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=dbix-scopedtransaction',
+			bugtracker  => 'https://github.com/guillaumeaubert/DBIx-ScopedTransaction/issues',
 		},
 		no_index               =>
 		{
