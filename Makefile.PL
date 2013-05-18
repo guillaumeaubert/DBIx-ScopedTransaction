@@ -13,6 +13,7 @@ WriteMakefile
                    'Data::Validate::Type' => 0,
                    'File::Spec' => 0,
                    'Test::Exception' => 0,
+                   'Test::FailWarnings' => 0,
                    'Test::More' => 0,
                    'Try::Tiny' => 0
                  },

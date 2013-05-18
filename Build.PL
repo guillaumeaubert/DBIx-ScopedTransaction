@@ -46,6 +46,7 @@ my $builder = $class->new(
 		'DBI'                  => 0,
 		'File::Spec'           => 0,
 		'Test::Exception'      => 0,
+		'Test::FailWarnings'   => 0,
 		'Test::More'           => 0,
 	},
 	requires             =>
