@@ -1,36 +1,36 @@
 Revision history for DBIx-ScopedTransaction
 
-v1.1.1  02/24/2013
+v1.1.1  2013-02-24
         * Generalized tests to support any database type.
         * Set up integration with Travis-CI for continuous integration.
 
-v1.1.0  10/03/2012
+v1.1.0  2012-10-03
         * Relicensed as GPLv3.
         * Cleaned up documentation.
 
-v1.0.7  09/23/2012
+v1.0.7  2012-09-23
         * Moved repository to GitHub.
         * Cleaned up requires vs build_requires.
 
-v1.0.6  07/30/2012
+v1.0.6  2012-07-30
         * Refactored use of '//', for portability.
 
-v1.0.5  07/24/2012
+v1.0.5  2012-07-24
         * Cleanup.
 
-v1.0.4  07/24/2012
+v1.0.4  2012-07-24
         * Prevented instantiating new objects in void context.
         * Fixed warnings.
 
-v1.0.3  05/23/2012
+v1.0.3  2012-05-23
         * Tweaked documentation.
         * Added error details when commit/rollback fails.
 
-v1.0.2  05/17/2012
+v1.0.2  2012-05-17
         * Changed to use in-memory SQLite databases for testing.
 
-v1.0.1  05/15/2012
+v1.0.1  2012-05-15
         * Made tests pass on Windows.
 
-v1.0.0  05/12/2012
+v1.0.0  2012-05-12
         * First public release.
