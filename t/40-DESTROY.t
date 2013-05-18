@@ -6,6 +6,7 @@ use warnings;
 use DBI;
 use DBIx::ScopedTransaction;
 use Test::Exception;
+use Test::FailWarnings -allow_deps => 1;
 use Test::More tests => 11;
 
 use lib 't/lib';
@@ -76,7 +77,7 @@ isnt(
 ) || diag( explain( $destroy_logs ) );
 
 is(
-	scalar ( grep { $_ eq 'Transaction object created at t/40-DESTROY.t:47 is going out of scope, but the transaction has not been committed or rolled back; check logic.' } @$destroy_logs ),
+	scalar ( grep { $_ eq 'Transaction object created at t/40-DESTROY.t:48 is going out of scope, but the transaction has not been committed or rolled back; check logic.' } @$destroy_logs ),
 	1,
 	'Found warning explaining where the transaction was started and that is was not completed properly.',
 ) || diag( explain( $destroy_logs ) );
