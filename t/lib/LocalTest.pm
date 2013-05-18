@@ -118,9 +118,9 @@ L<http://annocpan.org/dist/DBIx-ScopedTransaction>
 
 L<http://cpanratings.perl.org/d/DBIx-ScopedTransaction>
 
-=item * Search CPAN
+=item * MetaCPAN
 
-L<http://search.cpan.org/dist/DBIx-ScopedTransaction>
+L<https://metacpan.org/release/DBIx-ScopedTransaction>
 
 =back
 

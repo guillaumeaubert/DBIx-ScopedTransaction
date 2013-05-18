@@ -39,8 +39,8 @@ You can also look for information at:
  * [CPAN Ratings]
    (http://cpanratings.perl.org/d/DBIx-ScopedTransaction)
 
- * [Search CPAN]
-   (http://search.cpan.org/dist/DBIx-ScopedTransaction/)
+ * [MetaCPAN]
+   (https://metacpan.org/release/DBIx-ScopedTransaction)
 
 
 LICENSE AND COPYRIGHT
