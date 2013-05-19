@@ -47,7 +47,7 @@
    "provides" : {
       "DBIx::ScopedTransaction" : {
          "file" : "lib/DBIx/ScopedTransaction.pm",
-         "version" : "v1.1.1"
+         "version" : "v1.1.2"
       }
    },
    "release_status" : "stable",
@@ -63,5 +63,5 @@
          "url" : "https://github.com/guillaumeaubert/DBIx-ScopedTransaction"
       }
    },
-   "version" : "v1.1.1"
+   "version" : "v1.1.2"
 }
