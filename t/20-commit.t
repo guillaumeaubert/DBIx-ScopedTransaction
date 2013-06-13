@@ -8,7 +8,8 @@ use DBIx::ScopedTransaction;
 use File::Spec;
 use Test::Exception;
 use Test::FailWarnings -allow_deps => 1;
-use Test::More tests => 6;
+use Test::More tests => 7;
+use Test::Warn;
 
 use lib 't/lib';
 use LocalTest;
@@ -81,6 +82,31 @@ is(
 	$rows_found,
 	1,
 	'Found 1 rows in the table, commit successful.',
+);
+
+# Committing a now-inactive transaction should fail.
+subtest(
+	'Prevent committing twice.',
+	sub
+	{
+		plan( tests => 2 );
+		
+		my $double_commit_return;
+		warning_like(
+			sub
+			{
+				$double_commit_return = $transaction->commit();
+			},
+			qr/\QLogic error: inactive transaction object committed again\E/,
+			'Committing twice throws a warning.',
+		);
+		
+		is(
+			$double_commit_return,
+			0,
+			'Committing twice returned a failure.',
+		);
+	},
 );
 
 undef $dbh;
