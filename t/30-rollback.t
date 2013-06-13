@@ -9,6 +9,7 @@ use File::Spec;
 use Test::Exception;
 use Test::FailWarnings -allow_deps => 1;
 use Test::More tests => 6;
+use Test::Warn;
 
 use lib 't/lib';
 use LocalTest;
@@ -82,3 +83,30 @@ is(
 	0,
 	'Found 0 rows in the table, rollback successful.',
 );
+
+# Rolling back a now-inactive transaction should fail.
+subtest(
+	'Prevent rolling back twice.',
+	sub
+	{
+		plan( tests => 2 );
+		
+		my $double_rollback_return;
+		warning_like(
+			sub
+			{
+				$double_rollback_return = $transaction->rollback();
+			},
+			qr/\QLogic error: inactive transaction object committed again\E/,
+			'Rolling back twice throws a warning.',
+		);
+		
+		is(
+			$double_rollback_return,
+			0,
+			'Rolling back twice returned a failure.',
+		);
+	},
+);
+
+undef $dbh;
