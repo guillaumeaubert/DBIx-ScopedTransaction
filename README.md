@@ -2,6 +2,7 @@ DBIx-ScopedTransaction
 ======================
 
 [![Build Status](https://travis-ci.org/guillaumeaubert/DBIx-ScopedTransaction.png?branch=master)](https://travis-ci.org/guillaumeaubert/DBIx-ScopedTransaction)
+[![Coverage Status](https://coveralls.io/repos/guillaumeaubert/DBIx-ScopedTransaction/badge.png?branch=master)](https://coveralls.io/r/guillaumeaubert/DBIx-ScopedTransaction?branch=master)
 
 DBIx::ScopedTransaction is a module that allows scoping database transactions
 on DBI handles in code, to detect and prevent issues with unterminated
