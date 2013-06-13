@@ -8,7 +8,7 @@ use DBIx::ScopedTransaction;
 use File::Spec;
 use Test::Exception;
 use Test::FailWarnings -allow_deps => 1;
-use Test::More tests => 6;
+use Test::More tests => 7;
 use Test::Warn;
 
 use lib 't/lib';
