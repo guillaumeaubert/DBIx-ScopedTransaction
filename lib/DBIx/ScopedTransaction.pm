@@ -376,11 +376,6 @@ sub DESTROY
 }
 
 
-=head1 AUTHOR
-
-Guillaume Aubert, C<< <aubertg at cpan.org> >>.
-
-
 =head1 BUGS
 
 Please report any bugs or feature requests through the web interface at
@@ -419,11 +414,16 @@ L<https://metacpan.org/release/DBIx-ScopedTransaction>
 =back
 
 
+=head1 AUTHOR
+
+L<Guillaume Aubert|https://metacpan.org/author/AUBERTG>,
+C<< <aubertg at cpan.org> >>.
+
+
 =head1 ACKNOWLEDGEMENTS
 
-Thanks to ThinkGeek (L<http://www.thinkgeek.com/>) and its corporate overlords
-at Geeknet (L<http://www.geek.net/>), for footing the bill while I write code
-for them!
+I originally developed this project for ThinkGeek
+(L<http://www.thinkgeek.com/>). Thanks for allowing me to open-source it!
 
 
 =head1 COPYRIGHT & LICENSE
