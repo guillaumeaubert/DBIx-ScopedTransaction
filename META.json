@@ -4,7 +4,7 @@
       "Guillaume Aubert <aubertg@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4005, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.132830",
    "license" : [
       "open_source"
    ],
@@ -47,7 +47,7 @@
    "provides" : {
       "DBIx::ScopedTransaction" : {
          "file" : "lib/DBIx/ScopedTransaction.pm",
-         "version" : "v1.1.2"
+         "version" : "v1.1.3"
       }
    },
    "release_status" : "stable",
@@ -63,5 +63,5 @@
          "url" : "https://github.com/guillaumeaubert/DBIx-ScopedTransaction"
       }
    },
-   "version" : "v1.1.2"
+   "version" : "v1.1.3"
 }
