@@ -48,6 +48,7 @@ my $builder = $class->new(
 		'Test::Exception'      => 0,
 		'Test::FailWarnings'   => 0,
 		'Test::More'           => 0,
+		'Test::Warn'           => 0,
 	},
 	requires             =>
 	{
