@@ -1,5 +1,8 @@
 Revision history for DBIx-ScopedTransaction
 
+v1.1.4  2013-10-22
+        * Fixed missing dependency.
+
 v1.1.3  2013-10-21
         * Fixed false-positive reported by the newer versions of
           Test::FailWarnings.
