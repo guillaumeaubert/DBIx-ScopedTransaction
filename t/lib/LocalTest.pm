@@ -25,7 +25,7 @@ our $VERSION = '1.1.4';
 
 	use lib 't/lib';
 	use LocalTest;
-	
+
 	my $dbh = LocalTest::ok_database_handle();
 
 
@@ -42,9 +42,9 @@ Create a database handle.
 sub get_database_handle
 {
 	$ENV{'SCOPED_TRANSACTION_DATABASE'} ||= 'dbi:SQLite::memory:||';
-	
+
 	my ( $database_dsn, $database_user, $database_password ) = split( /\|/, $ENV{'SCOPED_TRANSACTION_DATABASE'} );
-	
+
 	my $database_handle = DBI->connect(
 		$database_dsn,
 		$database_user,
@@ -53,7 +53,7 @@ sub get_database_handle
 			RaiseError => 1,
 		}
 	);
-	
+
 	return $database_handle
 }
 
@@ -74,10 +74,10 @@ sub ok_database_handle
 		),
 		'Create connection to a database.',
 	);
-	
+
 	my $database_type = $database_handle->{'Driver'}->{'Name'} || '';
 	note( "Testing $database_type database." );
-	
+
 	return $database_handle;
 }
 

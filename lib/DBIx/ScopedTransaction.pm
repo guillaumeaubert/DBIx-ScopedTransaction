@@ -28,19 +28,19 @@ our $DESTROY_LOGGER;
 
 	use DBIx::ScopedTransaction;
 	use Try::Tiny;
-	
+
 	# Optional, define custom logger for errors detected when destroying a
 	# transaction object. By default, this prints to STDERR.
 	$DBIx::ScopedTransaction::DESTROY_LOGGER = sub
 	{
 		my ( $messages ) = @_;
-		
+
 		foreach my $message ( @$messages )
 		{
 			warn "DBIx::ScopedTransaction: $message";
 		}
 	};
-	
+
 	# Start a transaction on $dbh - this in turn calls $dbh->begin_work();
 	my $transaction = DBIx::ScopedTransaction->new( $dbh );
 	try
@@ -83,7 +83,7 @@ programmer handled terminating the transaction.
 			$transaction->rollback();
 		};
 	}
-	
+
 	test();
 
 As soon as the test() function has been run, $transaction goes out of scope and
@@ -108,7 +108,7 @@ Create a new transaction.
 sub new
 {
 	my ( $class, $database_handle ) = @_;
-	
+
 	# If we're in void context, DESTROY will be called immediately on the
 	# object we return in new(), which is not desirable and indicates an
 	# error in the calling code. To prevent unhelpful reports of
@@ -118,15 +118,15 @@ sub new
 		'You need to assign the output of DBIx::ScopedTransaction to a ' .
 		'variable, otherwise it would get destroyed immediately.'
 	) if !defined( wantarray() );
-	
+
 	Carp::croak('You need to pass a database handle to create a new transaction object')
 		if !Data::Validate::Type::is_instance( $database_handle, class => 'DBI::db' );
-	
+
 	Carp::croak('A transaction is already in progress on this database handle')
 		if !$database_handle->begin_work();
-	
+
 	my ( undef, $filename, $line ) = caller();
-	
+
 	return bless(
 		{
 			database_handle => $database_handle,
@@ -150,7 +150,7 @@ Return the database handle the current transaction is operating on.
 sub get_database_handle
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'database_handle'};
 }
 
@@ -172,12 +172,12 @@ The transaction object goes inactive after a successful commit or rollback.
 sub is_active
 {
 	my ( $self, $value ) = @_;
-	
+
 	if ( defined( $value ) )
 	{
 		$self->{'active'} = $value;
 	}
-	
+
 	return $self->{'active'};
 }
 
@@ -193,13 +193,13 @@ Commit the current transaction.
 sub commit
 {
 	my ( $self ) = @_;
-	
+
 	if ( ! $self->is_active() )
 	{
 		Carp::carp('Logic error: inactive transaction object committed again');
 		return 0;
 	}
-	
+
 	my $database_handle = $self->get_database_handle();
 	if ( $database_handle->commit() )
 	{
@@ -228,13 +228,13 @@ Roll back the current transaction.
 sub rollback
 {
 	my ( $self ) = @_;
-	
+
 	if ( ! $self->is_active() )
 	{
 		Carp::carp('Logic error: inactive transaction object committed again');
 		return 0;
 	}
-	
+
 	my $database_handle = $self->get_database_handle();
 	if ( $database_handle->rollback() )
 	{
@@ -267,7 +267,7 @@ C<$DBIx::ScopedTransaction::DESTROY_LOGGER>. For example:
 	$DBIx::ScopedTransaction::DESTROY_LOGGER = sub
 	{
 		my ( $messages ) = @_;
-		
+
 		foreach $message ( @$messages )
 		{
 			warn "DBIx::ScopedTransaction: $message";
@@ -279,7 +279,7 @@ C<$DBIx::ScopedTransaction::DESTROY_LOGGER>. For example:
 sub _default_destroy_logger
 {
 	my ( $messages ) = @_;
-	
+
 	print STDERR "\n";
 	print STDERR "/!\\ ***** DBIx::ScopedTransaction::DESTROY *****\n";
 	foreach my $message ( @$messages )
@@ -287,7 +287,7 @@ sub _default_destroy_logger
 		print STDERR "/!\\ $message\n";
 	}
 	print STDERR "\n";
-	
+
 	return;
 }
 
@@ -302,14 +302,14 @@ back safely before destroying the DBIx::ScopedTransaction object.
 sub DESTROY
 {
 	my ( $self ) = @_;
-	
+
 	# If the transaction is still active but we're trying to destroy the object,
 	# we have a problem. It most likely indicates that the transaction object is
 	# going out of scope without the transaction having been properly completed.
 	if ( $self->is_active() )
 	{
 		my $messages = [];
-		
+
 		# Try to resolve the situation as cleanly as possible, inside an eval
 		# block to catch any issue.
 		Try::Tiny::try
@@ -320,7 +320,7 @@ sub DESTROY
 				. "going out of scope, but the transaction has not been committed or "
 				. "rolled back; check logic."
 			);
-			
+
 			my $database_handle = $self->get_database_handle();
 			if ( defined( $database_handle ) )
 			{
@@ -342,7 +342,7 @@ sub DESTROY
 		{
 			push( @$messages, 'Error: ' . $_ );
 		};
-		
+
 		# Find where to log the errors to.
 		my $destroy_logger;
 		if ( defined( $DESTROY_LOGGER ) )
@@ -368,10 +368,10 @@ sub DESTROY
 			# No logger defined, use the default.
 			$destroy_logger = \&_default_destroy_logger;
 		}
-		
+
 		$destroy_logger->( $messages );
 	}
-	
+
 	return $self->can('SUPER::DESTROY') ? $self->SUPER::DESTROY() : 1;
 }
 

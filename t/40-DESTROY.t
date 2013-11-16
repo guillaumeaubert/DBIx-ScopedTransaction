@@ -49,7 +49,7 @@ ok(
 		},
 		'Create a transaction object.',
 	);
-	
+
 	lives_ok
 	(
 		sub
@@ -104,7 +104,7 @@ lives_ok(
 				FROM test_out_of_scope
 			|
 		);
-		
+
 		$rows_found = $result->[0]
 			if defined( $result ) && scalar( @$result ) != 0;
 	},

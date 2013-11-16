@@ -71,7 +71,7 @@ lives_ok(
 				FROM test_rollback
 			|
 		);
-		
+
 		$rows_found = $result->[0]
 			if defined( $result ) && scalar( @$result ) != 0;
 	},
@@ -90,7 +90,7 @@ subtest(
 	sub
 	{
 		plan( tests => 2 );
-		
+
 		my $double_rollback_return;
 		warning_like(
 			sub
@@ -100,7 +100,7 @@ subtest(
 			qr/\QLogic error: inactive transaction object committed again\E/,
 			'Rolling back twice throws a warning.',
 		);
-		
+
 		is(
 			$double_rollback_return,
 			0,
