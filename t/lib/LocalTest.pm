@@ -14,11 +14,11 @@ LocalTest - Test functions for L<DBIx::ScopedTransaction>.
 
 =head1 VERSION
 
-Version 1.1.4
+Version 1.1.5
 
 =cut
 
-our $VERSION = '1.1.4';
+our $VERSION = '1.1.5';
 
 
 =head1 SYNOPSIS
