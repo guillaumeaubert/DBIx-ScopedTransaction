@@ -1,10 +1,9 @@
 language: perl
 perl:
-  - "5.21"
-  - "5.20"
-  - "5.18"
+  - "5.24"
+  - "5.22"
   - "5.16"
-  - "5.14"
+  - "5.10"
 before_script:
   - mysql -e 'CREATE DATABASE scoped_transaction_test;'
   - psql -c 'CREATE DATABASE scoped_transaction_test;' -U postgres
